@@ -1,11 +1,12 @@
 package com.assignment.service;
 
 import com.assignment.model.EndUser;
+import com.assignment.model.Response;
 
 public interface EndUserService {
-    EndUser findByUsername(String username);
+    Response findByUsername(String username);
 
-    EndUser saveUser(EndUser user);
+    Response saveUser(EndUser user);
 
-    EndUser findByEmail(String email);
+    Response findByEmail(String email);
 }

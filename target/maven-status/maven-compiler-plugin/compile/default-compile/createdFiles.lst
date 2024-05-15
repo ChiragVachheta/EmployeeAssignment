@@ -6,7 +6,6 @@ com/assignment/security/JwtTokenFilter.class
 com/assignment/model/Address.class
 com/assignment/service/EndUserServiceImpl.class
 com/assignment/repo/EndUserRepository.class
-com/assignment/security/AuthRequest.class
 com/assignment/repo/EmployeeRepository.class
 com/assignment/service/EndUserService.class
 com/assignment/EmployeeAssignmentApplication.class
@@ -14,7 +13,8 @@ com/assignment/SwaggerConfig.class
 com/assignment/model/Employee.class
 com/assignment/rest/EmployeeController.class
 com/assignment/security/AuthApi.class
+com/assignment/security/model/AuthResponse.class
 com/assignment/service/EmployeeService.class
-com/assignment/security/AuthResponse.class
 com/assignment/security/ApplicationSecurity.class
 com/assignment/service/EmployeeServiceImpl.class
+com/assignment/security/model/AuthRequest.class

@@ -1,24 +1,24 @@
 package com.assignment.service;
 
-import java.util.List;
-
 import com.assignment.model.Address;
 import com.assignment.model.Employee;
+import com.assignment.model.Response;
+import org.springframework.validation.BindingResult;
 
 public interface EmployeeService {
-    Employee createEmployee(Employee employee);
+    Response createEmployee(Employee employee, BindingResult bindingResult);
 
-    Employee updateEmployee(Long id, Employee employee);
+    Response updateEmployee(Long id, Employee employee, BindingResult bindingResult);
 
-    void deleteEmployee(Long id);
+    boolean deleteEmployee(Long id);
 
-    Employee getEmployeeById(Long id);
+    Response getEmployeeById(Long id);
 
-    List<Employee> getAllEmployees();
+    Response getAllEmployees();
 
-    Address createEmployeeAddress(Long employeeId, Address address);
+    Response createEmployeeAddress(Long employeeId, Address address);
 
-    Address updateEmployeeAddress(Long employeeId, Long addressId, Address address);
+    Response updateEmployeeAddress(Long employeeId, Long addressId, Address address);
 
-    List<Address> getAllAddressesForEmployee(Long employeeId);
+    Response getAllAddressesForEmployee(Long employeeId);
 }

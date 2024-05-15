@@ -2,6 +2,9 @@ package com.assignment.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -9,10 +12,13 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotBlank(message = "First name is required")
     private String firstName;
+    @NotBlank(message = "Last name is required")
     private String lastName;
+    @Email(message = "Invalid email format")
     private String email;
+    @Size(min = 10, max = 15, message = "Phone number must be between 10 and 15 characters")
     private String phone;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)

@@ -19,9 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 
-	@Autowired private EndUserRepository userRepo;
+	@Autowired
+	private EndUserRepository userRepo;
 	
-	@Autowired private JwtTokenFilter jwtTokenFilter;
+	@Autowired
+	private JwtTokenFilter jwtTokenFilter;
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -40,7 +42,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 		http.authorizeRequests()
-				.antMatchers("/auth/login").permitAll()
+				.antMatchers("/auth/login","/bizsense/user").permitAll()
 				.anyRequest().authenticated();
 		
         http.exceptionHandling()
